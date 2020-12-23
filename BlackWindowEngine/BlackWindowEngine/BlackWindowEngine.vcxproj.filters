@@ -72,6 +72,9 @@
     <ClInclude Include="MovingTrap.h">
       <Filter>헤더 파일\User</Filter>
     </ClInclude>
+    <ClInclude Include="SerialClass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -121,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="PushTrap.cpp">
       <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="Serial.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

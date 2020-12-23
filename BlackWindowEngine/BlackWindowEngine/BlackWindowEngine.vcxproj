@@ -149,6 +149,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PushTrap.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Serial.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Tools.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="PushTrap.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="SerialClass.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Tools.h" />
