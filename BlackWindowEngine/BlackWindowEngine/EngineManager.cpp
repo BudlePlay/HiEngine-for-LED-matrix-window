@@ -13,7 +13,7 @@ EngineManager::EngineManager()
 
 EngineManager::EngineManager(SceneManager* scene)
 {
-	ser = new Serial("");
+	ser = new Serial("\\\\.\\COM3");
 	if (ser->IsConnected()) {
 		cout << "Serial Communication Connected." << endl;
 		// memset(message, 0, sizeof(message));
@@ -23,6 +23,7 @@ EngineManager::EngineManager(SceneManager* scene)
 	}
 	else {
 		cout << "Device can not be found or can not be configured." << endl;
+		return;
 	}
 	
 	this->scene = scene;
@@ -137,10 +138,10 @@ void EngineManager::Print_Map()
 			str.append(std::to_string(1));
 		}
 
-
-		/*ser->WriteData(message, strlen(message) + 1);
-		ser->ReadData(message, sizeof(message));
-		cout << "Message from Arduino: " << message << endl;*/
+		
+		ser->WriteData(str.c_str(), strlen(str.c_str()) + 1);
+		//ser->ReadData(message, sizeof(message));
+		//cout << "Message from Arduino: " << message << endl;
 
 	}
 	Tools::backCusor();

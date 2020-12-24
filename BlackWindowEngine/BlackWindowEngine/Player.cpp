@@ -60,7 +60,7 @@ void Player::Control()
 		}
 
 
-		if (pressed_key == 32)
+		if (pressed_key == 'y')
 		{
 			Object* o = WorldOutliner::FindObject("Player");
 

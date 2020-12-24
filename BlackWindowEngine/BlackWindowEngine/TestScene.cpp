@@ -4,12 +4,12 @@
 
 TestScene::TestScene(): SceneManager()
 {
-	mapPointer = new Map(30, 30);
+	mapPointer = new Map(32, 16);
 }
 
 void TestScene::Create()
 {
-	worldOutliner.AddObject(new Player(FPosition({ 2, 28 }), "Player", "¡è", "Player"));
+	worldOutliner.AddObject(new Player(FPosition({ 20, 5 }), "Player", "¡è", "Player"));
 	worldOutliner.AddObject(new PushTrap(FPosition({ 15, 15 }), "PushTrap_1", "@@", "PushTrap"));
 	worldOutliner.AddObject(new MovingTrap(FPosition({ 20, 20 }), "MovingTrap_1", "HH", "¡ç", "MovingTrap"));
 	worldOutliner.AddObject(new MovingTrap(FPosition({ 25, 20 }), "MovingTrap_2", "HH", "¡ç", "MovingTrap"));
@@ -69,8 +69,8 @@ void TestScene::Map_Make()
 {
 	worldOutliner.AddObject(new Wall(FPosition({0, 0}), "Wall_Top", "¡á", Area({Size, 1}), "Wall"));
 	worldOutliner.AddObject(new Wall(FPosition({0, 0}), "Wall_Left", "¡á", Area({1, Size}), "Wall"));
-	worldOutliner.AddObject(new Wall(FPosition({(float)Size - 1, 0}), "Wall_Right", "¡á", Area({1, Size}), "Wall"));
-	worldOutliner.AddObject(new Wall(FPosition({0, (float)Size - 1}), "Wall_Bottom", "¡á", Area({Size, 1}), "Wall"));
+	worldOutliner.AddObject(new Wall(FPosition({(float)Size - 1, 0}), "Wall_Right", "¡á", Area({1, Size}), "Wall"));	
+	worldOutliner.AddObject(new Wall(FPosition({0, (float)15}), "Wall_Bottom", "¡á", Area({Size, 1}), "Wall"));
 }
 
 std::string TestScene::getW()
