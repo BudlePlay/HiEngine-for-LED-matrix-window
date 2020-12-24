@@ -1,6 +1,10 @@
 #include "EngineManager.h"
 
 
+#include <iomanip>
+#include <string>
+
+
 EngineManager::EngineManager()
 {
 	this->EngineManager::EngineManager(new BasicScene());
@@ -9,6 +13,18 @@ EngineManager::EngineManager()
 
 EngineManager::EngineManager(SceneManager* scene)
 {
+	ser = new Serial("");
+	if (ser->IsConnected()) {
+		cout << "Serial Communication Connected." << endl;
+		// memset(message, 0, sizeof(message));
+		// Serial::ReadData() 내부에서 memset이 실행된다.
+		ser->ReadData(message, sizeof(message));
+		cout << "Message from Arduino: " << message << endl;
+	}
+	else {
+		cout << "Device can not be found or can not be configured." << endl;
+	}
+	
 	this->scene = scene;
 	Game();
 }
@@ -94,16 +110,38 @@ void EngineManager::Print_Map()
 	for (Position i : v)
 	{
 		Tools::cersorMoveTo({i.x, i.y});
+
+		string str = "";
+		
+
+		{
+			char num[3];
+			snprintf(num, 3, "%02d", i.x);
+			str.append(num);
+		}
+		{
+			char num[3];
+			snprintf(num, 3, "%02d", i.y);
+			str.append(num);
+		}
 		
 		int comparestr = scene->mapPointer->GetPartOfMap({ i.x, i.y }).compare("  ");
 		if(comparestr == 0)
 		{
 			cout << "ii";
+			str.append(std::to_string(0));
 		}
 		else
 		{
 			cout << scene->mapPointer->GetPartOfMap({ i.x, i.y });
+			str.append(std::to_string(1));
 		}
+
+
+		/*ser->WriteData(message, strlen(message) + 1);
+		ser->ReadData(message, sizeof(message));
+		cout << "Message from Arduino: " << message << endl;*/
+
 	}
 	Tools::backCusor();
 }

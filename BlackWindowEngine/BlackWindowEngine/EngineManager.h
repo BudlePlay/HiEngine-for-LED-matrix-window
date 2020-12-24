@@ -9,12 +9,14 @@
 #include "BasicScene.h"
 #include "Tools.h"
 
+#include "SerialClass.h"
 
 
 class EngineManager
 {
 private:
-
+	Serial* ser;
+	char message[1000];
 	Time time;
 	SceneManager* scene;
 public:
