@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name arduino_micro_shield)(type Legacy)(uri C:/Repository/Hi-Engine_forLEDMatrix/PCB/libraries/arduino_micro_shield/arduino_micro_shield.lib)(options "")(descr ""))
+  (lib (name Connector-ML)(type Legacy)(uri ${KIPRJMOD}/libraries/RPi_Zero_pHat_Template/symbols/Connector-ML.lib)(options "")(descr ""))
+)
