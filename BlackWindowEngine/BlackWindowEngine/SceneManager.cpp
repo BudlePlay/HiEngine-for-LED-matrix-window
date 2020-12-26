@@ -44,9 +44,7 @@ void SceneManager::UploadMap(std::vector<Object*> obs)
 		}
 		catch (std::exception e)
 		{
-			Tools::cersorMoveTo(Position({0, mapPointer->GetYSIZE() + 2}));
 			std::cout << "ERROR : out of Map" << std::endl;
-			Tools::backCusor();
 		}
 	}
 }

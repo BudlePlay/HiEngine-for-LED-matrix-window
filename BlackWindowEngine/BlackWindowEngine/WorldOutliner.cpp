@@ -18,9 +18,7 @@ Object* WorldOutliner::FindObject(std::string name)
 		}
 	}
 
-	Tools::cersorMoveTo(Position({20, 30}));
 	std::cout << "ERROR : Not found  " << name << std::endl;
-	Tools::backCusor();
 	return nullptr;
 }
 

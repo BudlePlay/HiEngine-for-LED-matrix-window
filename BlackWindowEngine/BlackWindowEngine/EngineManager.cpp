@@ -16,8 +16,6 @@ EngineManager::EngineManager(SceneManager* scene)
 	ser = new Serial("\\\\.\\COM3");
 	if (ser->IsConnected()) {
 		cout << "Serial Communication Connected." << endl;
-		// memset(message, 0, sizeof(message));
-		// Serial::ReadData() 내부에서 memset이 실행된다.
 		ser->ReadData(message, sizeof(message));
 		cout << "Message from Arduino: " << message << endl;
 	}
@@ -110,7 +108,6 @@ void EngineManager::Print_Map()
 	std::vector<Position> v = scene->mapPointer->ModifiedMap();
 	for (Position i : v)
 	{
-		Tools::cersorMoveTo({i.x, i.y});
 
 		string str = "";
 		
@@ -144,7 +141,6 @@ void EngineManager::Print_Map()
 		//cout << "Message from Arduino: " << message << endl;
 
 	}
-	Tools::backCusor();
 }
 
 EngineManager::~EngineManager()
