@@ -161,6 +161,7 @@
     <ClInclude Include="BasicScene.h" />
     <ClInclude Include="Canon.h" />
     <ClInclude Include="EngineManager.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="MovingTrap.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PushTrap.h" />

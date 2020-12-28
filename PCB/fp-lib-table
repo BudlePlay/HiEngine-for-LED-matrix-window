@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name arduino_micro_shield)(type KiCad)(uri ${KIPRJMOD}/libraries/arduino_micro_shield/arduino_micro_shield.pretty)(options "")(descr ""))
-  (lib (name Connector_Samtec_HLE_SMD-ML)(type KiCad)(uri ${KIPRJMOD}/libraries/RPi_Zero_pHat_Template/footprints/Connector_Samtec_HLE_SMD-ML.pretty)(options "")(descr ""))
-)
