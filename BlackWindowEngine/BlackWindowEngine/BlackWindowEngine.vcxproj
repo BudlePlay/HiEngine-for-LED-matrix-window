@@ -144,6 +144,7 @@
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="MovingTrap.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />

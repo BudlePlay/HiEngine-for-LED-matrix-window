@@ -1,5 +1,4 @@
 #pragma once
-#include <tuple>
 #include <wiringPi.h>
 
 #define R1 17
@@ -17,4 +16,18 @@
 #define LATCH 4
 #define OE 2
 
-extern unsigned char screen[16][32];
+class Matrix 
+{
+private:
+	unsigned char screen[16][32];
+	void wiringPi_init();
+	void clk();
+	void latch();
+	unsigned char bits_from_int(unsigned char mode, unsigned char x);
+	void set_row(unsigned char row);
+	void set_color_top(unsigned char color);
+	void set_color_bottom(unsigned char color);
+public:
+	void refresh();
+	void set_pixel(unsigned char x, unsigned char y, unsigned char color);
+};
